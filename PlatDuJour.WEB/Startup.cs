@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PlatDuJour.DAL;
 using PlatDuJour.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,8 @@ namespace LearningIdentity
                 option.ClientSecret = "yJaov2gvCaJIncBByLXcn2kQ";
                 option.CallbackPath = "/Account/ExternalLoginCallBack/";
             });
+
+            services.InjectServices();
 
             services.AddControllersWithViews();
 

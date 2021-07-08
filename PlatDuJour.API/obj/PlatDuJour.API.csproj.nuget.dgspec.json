@@ -35,6 +35,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\User\\source\\repos\\Plat_Du_Jour\\PlatDuJour.DAL\\PlatDuJour.DAL.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\Plat_Du_Jour\\PlatDuJour.DAL\\PlatDuJour.DAL.csproj"
+              },
               "C:\\Users\\User\\source\\repos\\Plat_Du_Jour\\PlatDuJour.WEB\\PlatDuJour.WEB.csproj": {
                 "projectPath": "C:\\Users\\User\\source\\repos\\Plat_Du_Jour\\PlatDuJour.WEB\\PlatDuJour.WEB.csproj"
               }

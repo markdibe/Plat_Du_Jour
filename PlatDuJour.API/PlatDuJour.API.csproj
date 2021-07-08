@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PlatDuJour.DAL\PlatDuJour.DAL.csproj" />
     <ProjectReference Include="..\PlatDuJour.WEB\PlatDuJour.WEB.csproj" />
   </ItemGroup>
 

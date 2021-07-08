@@ -13,7 +13,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using PlatDuJour.DAL;
+using PlatDuJour.DAL.IServices;
 using PlatDuJour.DAL.Models;
+using PlatDuJour.DAL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,6 +66,10 @@ namespace IdentityAPI
                     ClockSkew = TimeSpan.FromMinutes(0)
                 };
             });
+
+            //injecting our services
+            services.InjectServices();
+            
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

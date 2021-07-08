@@ -33,7 +33,7 @@ namespace PlatDuJour.DAL.Models
         public virtual DbSet<IngredientItem> IngredientItems { get; set; }
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<ItemImage> ItemImages { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
+        //public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Portfolio> Portfolios { get; set; }
         public virtual DbSet<RatingImage> RatingImages { get; set; }
 
@@ -283,36 +283,36 @@ namespace PlatDuJour.DAL.Models
                     .HasConstraintName("FK_ItemImages_Items");
             });
 
-            modelBuilder.Entity<Order>(entity =>
-            {
-                entity.Property(e => e.OrderId).ValueGeneratedNever();
+            //modelBuilder.Entity<Order>(entity =>
+            //{
+            //    entity.Property(e => e.OrderId).ValueGeneratedNever();
 
-                entity.Property(e => e.Approved).HasColumnName("approved");
+            //    entity.Property(e => e.Approved).HasColumnName("approved");
 
-                entity.Property(e => e.ClientId)
-                    .IsRequired()
-                    .HasMaxLength(450);
+            //    entity.Property(e => e.ClientId)
+            //        .IsRequired()
+            //        .HasMaxLength(450);
 
-                entity.Property(e => e.Rating)
-                    .HasColumnType("decimal(1, 1)")
-                    .HasColumnName("rating");
+            //    entity.Property(e => e.Rating)
+            //        .HasColumnType("decimal(1, 1)")
+            //        .HasColumnName("rating");
 
-                entity.Property(e => e.RatingDescription)
-                    .HasMaxLength(1000)
-                    .HasColumnName("ratingDescription");
+            //    entity.Property(e => e.RatingDescription)
+            //        .HasMaxLength(1000)
+            //        .HasColumnName("ratingDescription");
 
-                entity.HasOne(d => d.Client)
-                    .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.ClientId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Orders_AspNetUsers");
+            //    entity.HasOne(d => d.Client)
+            //        .WithMany(p => p.Orders)
+            //        .HasForeignKey(d => d.ClientId)
+            //        .OnDelete(DeleteBehavior.ClientSetNull)
+            //        .HasConstraintName("FK_Orders_AspNetUsers");
 
-                entity.HasOne(d => d.DailyPlate)
-                    .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.DailyPlateId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Orders_DailyPlates");
-            });
+            //    entity.HasOne(d => d.DailyPlate)
+            //        .WithMany(p => p.Orders)
+            //        .HasForeignKey(d => d.DailyPlateId)
+            //        .OnDelete(DeleteBehavior.ClientSetNull)
+            //        .HasConstraintName("FK_Orders_DailyPlates");
+            //});
 
             modelBuilder.Entity<Portfolio>(entity =>
             {
