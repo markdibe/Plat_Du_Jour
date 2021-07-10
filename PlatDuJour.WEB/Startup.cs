@@ -32,6 +32,7 @@ namespace LearningIdentity
             services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlServer(Configuration.GetConnectionString("default")); });
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
+
             services.AddAuthentication().AddFacebook(options =>
             {
                 options.AppId = FBVM.AppId;
@@ -44,8 +45,9 @@ namespace LearningIdentity
                 option.CallbackPath = "/Account/ExternalLoginCallBack/";
             });
 
-            services.InjectServices();
 
+            services.InjectServices();
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
 
         }
@@ -69,6 +71,7 @@ namespace LearningIdentity
             app.UseRouting();
 
             app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

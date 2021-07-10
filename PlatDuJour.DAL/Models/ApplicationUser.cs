@@ -17,11 +17,13 @@ namespace PlatDuJour.DAL.Models
 
         public virtual ICollection<Item> Items { get; set; }
 
-        public virtual ICollection<DailyPlate> DailyPlates { get; set; }
+        //public virtual ICollection<DailyPlate> DailyPlates { get; set; }
 
         public virtual ICollection<Portfolio> Portfolios { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Rating> Ratings { get; set; }
+
+        //public virtual ICollection<Order> Orders { get; set; }
 
 
     }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7">
       <PrivateAssets>all</PrivateAssets>
@@ -14,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PlatDuJour.BO\PlatDuJour.BO.csproj" />
     <ProjectReference Include="..\PlatDuJour.DAL\PlatDuJour.DAL.csproj" />
     <ProjectReference Include="..\PlatDuJour.WEB\PlatDuJour.WEB.csproj" />
   </ItemGroup>

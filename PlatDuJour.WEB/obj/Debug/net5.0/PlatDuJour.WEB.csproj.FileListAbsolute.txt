@@ -1315,3 +1315,5 @@ C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.WEB\obj\Debug\net5.0\PlatDuJo
 C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.WEB\obj\Debug\net5.0\ref\PlatDuJour.WEB.dll
 C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.WEB\obj\Debug\net5.0\PlatDuJour.WEB.pdb
 C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.WEB\obj\Debug\net5.0\PlatDuJour.WEB.genruntimeconfig.cache
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.WEB\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.WEB\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

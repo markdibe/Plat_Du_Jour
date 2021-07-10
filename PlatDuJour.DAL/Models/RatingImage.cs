@@ -19,10 +19,12 @@ namespace PlatDuJour.DAL.Models
         [DataType(DataType.Text)]
         [StringLength(300)]
         public string ImageTag { get; set; }
-        [Required]
-        [ForeignKey(nameof(OrderIdRate))]
-        public int OrderIdRateId { get; set; }
+        
+        [ForeignKey(nameof(Rating))]
+        public int RatingId { get; set; }
 
-        public virtual Order OrderIdRate { get; set; }
+        public virtual Rating Rating { get; set; }
+        
+        //public virtual Order OrderIdRate { get; set; }
     }
 }

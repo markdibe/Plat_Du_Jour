@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlatDuJour.WEB", "PlatDuJou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlatDuJour.API", "PlatDuJour.API\PlatDuJour.API.csproj", "{4FAA42F7-D2E8-4EC1-985F-7F7421C97773}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlatDuJour.BO", "PlatDuJour.BO\PlatDuJour.BO.csproj", "{7CB66A9B-049C-4A96-B9A9-FB4F353CA71B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4FAA42F7-D2E8-4EC1-985F-7F7421C97773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FAA42F7-D2E8-4EC1-985F-7F7421C97773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FAA42F7-D2E8-4EC1-985F-7F7421C97773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB66A9B-049C-4A96-B9A9-FB4F353CA71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB66A9B-049C-4A96-B9A9-FB4F353CA71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB66A9B-049C-4A96-B9A9-FB4F353CA71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB66A9B-049C-4A96-B9A9-FB4F353CA71B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

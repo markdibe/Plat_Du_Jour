@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\bin\Debug\net5.0\PlatDuJour.BO.deps.json
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\bin\Debug\net5.0\PlatDuJour.BO.dll
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\bin\Debug\net5.0\ref\PlatDuJour.BO.dll
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\bin\Debug\net5.0\PlatDuJour.BO.pdb
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\bin\Debug\net5.0\PlatDuJour.DAL.dll
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\bin\Debug\net5.0\PlatDuJour.DAL.pdb
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\obj\Debug\net5.0\PlatDuJour.BO.csprojAssemblyReference.cache
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\obj\Debug\net5.0\PlatDuJour.BO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\obj\Debug\net5.0\PlatDuJour.BO.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\obj\Debug\net5.0\PlatDuJour.BO.AssemblyInfo.cs
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\obj\Debug\net5.0\PlatDuJour.BO.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\obj\Debug\net5.0\PlatDuJour.BO.csproj.CopyComplete
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\obj\Debug\net5.0\PlatDuJour.BO.dll
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\obj\Debug\net5.0\ref\PlatDuJour.BO.dll
+C:\Users\User\source\repos\Plat_Du_Jour\PlatDuJour.BO\obj\Debug\net5.0\PlatDuJour.BO.pdb

@@ -12,17 +12,17 @@ namespace PlatDuJour.DAL.Models
     {
         public DailyPlate()
         {
-            Orders = new HashSet<Order>();
+            //Orders = new HashSet<Order>();
         }
 
         [Key]
         public int DailyPlateId { get; set; }
         public DateTime Day { get; set; }
         
-        [Required]
-        [ForeignKey(nameof(ApplicationUser))]
-        public string UserId { get; set; }
-        
+        //[Required]
+        //[ForeignKey(nameof(ApplicationUser))]
+        //public string UserId { get; set; }
+
         [ForeignKey(nameof(Item))]
         [Required]
         public int ItemId { get; set; }
@@ -36,7 +36,10 @@ namespace PlatDuJour.DAL.Models
         public string Comments { get; set; }
 
         public virtual Item Item { get; set; }
-        public virtual ApplicationUser User { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
+            
+
+        public virtual ICollection<Rating> Ratings { get; set; }
+
+
     }
 }

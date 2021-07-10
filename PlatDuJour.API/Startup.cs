@@ -1,4 +1,5 @@
 
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -69,7 +70,16 @@ namespace IdentityAPI
 
             //injecting our services
             services.InjectServices();
-            
+
+            var mapperConfiguration = new MapperConfiguration(option =>
+            {
+                option.AddProfile(new UserProfile());
+            });
+
+            IMapper mapper = mapperConfiguration.CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddAutoMapper(typeof(Startup));
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -19,8 +19,7 @@ namespace PlatDuJour.DAL.Models
         public string CategoryName { get; set; }
         [StringLength(1000)]
         public string CategoryDescription { get; set; }
-        
-        public int ParentId { get; set; }
+        public Nullable<int> ParentId { get; set; }
         [StringLength(300)]
         [DataType(DataType.ImageUrl)]
         public string ImageUrl { get; set; }

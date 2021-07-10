@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PlatDuJour.DAL.Services
 {
-    public class GenericRepos<T> : IGenericRepos<T> where T : class
+    public class GenericRepos<T> : IGenericRepos<T> where T : class 
     {
         private readonly ApplicationDbContext _context;
 
