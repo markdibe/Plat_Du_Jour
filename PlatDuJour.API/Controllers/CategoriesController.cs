@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using IdentityAPI;
 using Microsoft.AspNetCore.Mvc;
+using PlatDuJour.BO;
+using PlatDuJour.BO.QueryFilter;
 using PlatDuJour.BO.ViewModels;
 using PlatDuJour.DAL.IServices;
 using PlatDuJour.DAL.Models;
@@ -12,71 +15,56 @@ using System.Threading.Tasks;
 
 namespace PlatDuJour.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
-    [ApiController]
-    public class CategoriesController : ControllerBase
+
+    public class CategoriesController : APIBaseController
     {
-        //dependency injection
-        private readonly IMapper _mapper;
-        private readonly ICategoryRepos _category;
-        public CategoriesController(IMapper mapper , ICategoryRepos category)
+
+        public CategoriesController(IUnitOfWork unit, IQueryFilter filter) : base(unit, filter)
         {
-            _mapper = mapper;
-            _category = category;
+
         }
 
         // GET: api/<CategoriesController>
         [HttpGet]
-        public IEnumerable<CategoryViewModel> Get([FromQuery] QueryParameters query)
+        public async Task<ActionResult<IEnumerable<CategoryViewModel>>> Get([FromQuery] QueryParameters query)
         {
-            var result = _category.GetAll();
-            if (query.Id != default(int))
-            {
-                result = result.Where(x => x.CategoryId == query.Id);
-            }
-            if (!string.IsNullOrEmpty(query.FilterValue))
-            {
-                result = result.Where(x => x.CategoryName.Contains(query.FilterValue) || x.CategoryTitle.Contains(query.FilterValue));
-            }
-
-            result = result.Skip(query.PageNumber * query.Range).Take(query.Range);
-            if (query.OrderByDesc) 
-            {
-                result = result.OrderByDescending(x=>x.CategoryId);
-            }
-            List<Category> categories = result.ToList();
-            List<CategoryViewModel> categoriesvm = new List<CategoryViewModel>();
-            foreach(var category in categories)
-            {
-                CategoryViewModel categoryView = _mapper.Map<CategoryViewModel>(category);
-                categoriesvm.Add(categoryView);
-            }
-            return categoriesvm;
+            return await _filter.getCategories();
         }
 
         // GET api/<CategoriesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<CategoryViewModel> Get(int id)
         {
-            return "value";
+            return await _filter.getCategoryById(id);
         }
 
         // POST api/<CategoriesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task Post([FromBody] CategoryViewModel categoryViewModel)
         {
+            if (ModelState.IsValid)
+            {
+                Category cat = _unit.Mapper.Map<Category>(categoryViewModel);
+                await _unit.CategoryRepos.Create(cat);
+            }
         }
 
         // PUT api/<CategoriesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task Put(int id, [FromBody] CategoryViewModel categoryVM)
         {
+            if (ModelState.IsValid && id == categoryVM.CategoryId)
+            {
+                Category cat = _unit.Mapper.Map<Category>(categoryVM);
+                await _unit.CategoryRepos.Update(cat);
+            }
         }
 
         // DELETE api/<CategoriesController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
+            await _unit.CategoryRepos.Delete(id);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PlatDuJour.DAL.Services
 {
-    class ItemImageRepos: GenericRepos<ItemImage>, IItemImageRepos 
+    public class ItemImageRepos: GenericRepos<ItemImage>, IItemImageRepos 
     {
         public ItemImageRepos(ApplicationDbContext context):base(context)
         {

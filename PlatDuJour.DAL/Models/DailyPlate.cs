@@ -19,9 +19,6 @@ namespace PlatDuJour.DAL.Models
         public int DailyPlateId { get; set; }
         public DateTime Day { get; set; }
         
-        //[Required]
-        //[ForeignKey(nameof(ApplicationUser))]
-        //public string UserId { get; set; }
 
         [ForeignKey(nameof(Item))]
         [Required]

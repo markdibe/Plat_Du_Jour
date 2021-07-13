@@ -14,6 +14,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using PlatDuJour.BO;
+using PlatDuJour.BO.QueryFilter;
 using PlatDuJour.DAL;
 using PlatDuJour.DAL.IServices;
 using PlatDuJour.DAL.Models;
@@ -68,20 +70,16 @@ namespace IdentityAPI
                 };
             });
 
-            //injecting our services
-            services.InjectServices();
 
-            var mapperConfiguration = new MapperConfiguration(option =>
-            {
-                option.AddProfile(new UserProfile());
-            });
 
-            IMapper mapper = mapperConfiguration.CreateMapper();
-            services.AddSingleton(mapper);
+            services.AddScoped<IQueryFilter, QueryFilter>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddAutoMapper(typeof(Startup));
 
 
             services.AddControllers();
+
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "IdentityAPI", Version = "v1" });

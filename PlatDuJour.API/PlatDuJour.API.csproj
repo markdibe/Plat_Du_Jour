@@ -20,4 +20,10 @@
     <ProjectReference Include="..\PlatDuJour.WEB\PlatDuJour.WEB.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\Ingredients\" />
+    <Folder Include="wwwroot\Images\Items\" />
+    <Folder Include="wwwroot\Images\Portfolios\" />
+  </ItemGroup>
+
 </Project>
