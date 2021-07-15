@@ -2588,6 +2588,7 @@
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
+          "PlatDuJour.BO": "1.0.0",
           "PlatDuJour.DAL": "1.0.0"
         },
         "compile": {

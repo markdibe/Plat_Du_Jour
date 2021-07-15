@@ -31,7 +31,11 @@ namespace PlatDuJour.BO
 
         IItemRepos ItemRepos { get; }
 
+        IUserRepos UserRepos { get; }
+
         IMapper Mapper { get; }
+
+
 
     }
 }

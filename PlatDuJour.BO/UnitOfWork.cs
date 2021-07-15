@@ -33,7 +33,8 @@ namespace PlatDuJour.BO
         private IRatingImageRepos ratingImageRepos;
         private IRatingRepos ratingRepos;
         private IMapper mapper;
-        private IQueryFilter queryFilter;
+        private IUserRepos userRepos;
+
         #endregion
 
 
@@ -70,6 +71,8 @@ namespace PlatDuJour.BO
         public IRatingRepos RatingRepos => ratingRepos ?? new RatingRepos(_context);
 
         public IItemRepos ItemRepos => itemRepos ?? new ItemRepos(_context);
+
+        public IUserRepos UserRepos => userRepos ?? new UserRepos(_context);
 
         public IMapper Mapper
         {

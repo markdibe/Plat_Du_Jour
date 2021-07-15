@@ -1,4 +1,5 @@
 ﻿using PlatDuJour.BO.ViewModels;
+using PlatDuJour.DAL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace PlatDuJour.BO.QueryFilter
 
         Task<List<RatingImageViewModel>> getRatingImages();
 
-        Task<CategoryViewModel>  getCategoryById(int id);
+        Task<CategoryViewModel> getCategoryById(int id);
         Task<DailyPlateViewModel> getPlateById(int id);
 
         Task<IngredientViewModel> getIngredientById(int Id);
@@ -45,6 +46,10 @@ namespace PlatDuJour.BO.QueryFilter
 
 
         Task<RatingImageViewModel> getRatingImageById(int id);
+
+        Task<List<UserViewModel>> getUsers();
+        UserViewModel getUserById(string id);
+
 
 
     }

@@ -8,8 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PlatDuJour.BO;
+using PlatDuJour.BO.QueryFilter;
 using PlatDuJour.DAL;
 using PlatDuJour.DAL.Models;
+using PlatDuJour.WEB.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +49,10 @@ namespace LearningIdentity
             });
 
 
-            services.InjectServices();
+            //services.InjectServices();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IQueryFilter, QueryFilter>();
+            services.AddScoped<SelectLists>();
             services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
 

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace PlatDuJour.DAL.Services
 {
-    public class GenericRepos<T> : IGenericRepos<T> where T : class 
+    public class GenericRepos<T> : IGenericRepos<T> where T : class
     {
-        private readonly ApplicationDbContext _context;
+        protected readonly ApplicationDbContext _context;
 
         public GenericRepos(ApplicationDbContext context)
         {
@@ -31,7 +31,7 @@ namespace PlatDuJour.DAL.Services
             if (t != null)
             {
                 _context.Entry(t).State = EntityState.Deleted;
-                await _context.SaveChangesAsync(); 
+                await _context.SaveChangesAsync();
             }
         }
 
@@ -42,7 +42,12 @@ namespace PlatDuJour.DAL.Services
 
         public async Task<T> GetById(int Id)
         {
-            return await  _context.Set<T>().FindAsync(Id);
+            return await _context.Set<T>().FindAsync(Id);
+        }
+
+        public async Task<T> GetById(string id)
+        {
+            return await _context.Set<T>().FindAsync(id);
         }
 
         public async Task Update(T entity)

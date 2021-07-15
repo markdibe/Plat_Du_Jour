@@ -28,7 +28,7 @@ namespace PlatDuJour.DAL.Models
         //public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Portfolio> Portfolios { get; set; }
         public virtual DbSet<RatingImage> RatingImages { get; set; }
-
+        public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public virtual DbSet<Rating> Rates { get; set; }
 
     }

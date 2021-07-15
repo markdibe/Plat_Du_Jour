@@ -3,6 +3,7 @@ using LearningIdentity.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using PlatDuJour.WEB.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,15 +71,15 @@ namespace LearningIdentity.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([FromForm] LoginVM model)
         {
-            ApplicationUser user = (ApplicationUser)await _userManager.FindByEmailAsync(model.Email);
+            var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
-                return NotFound();
+                return View(model);
             }
             var signInAction = await _signInManager.PasswordSignInAsync(user, model.Password, isPersistent: model.RememberMe, lockoutOnFailure: false);
             if (signInAction.Succeeded)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(AdminController.Index), "Admin");
             }
             else
             {

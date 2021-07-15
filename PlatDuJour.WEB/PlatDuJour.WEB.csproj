@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PlatDuJour.BO\PlatDuJour.BO.csproj" />
     <ProjectReference Include="..\PlatDuJour.DAL\PlatDuJour.DAL.csproj" />
   </ItemGroup>
 

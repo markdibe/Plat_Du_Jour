@@ -12,6 +12,8 @@ namespace PlatDuJour.DAL.IServices
 
         Task<T> GetById(int Id);
 
+        Task<T> GetById(string id);
+
         Task<T> Create(T entity);
 
         Task Update(T entity);

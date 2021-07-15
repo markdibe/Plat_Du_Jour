@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PlatDuJour.BO.ViewModels;
 using PlatDuJour.DAL;
+using PlatDuJour.DAL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -134,6 +135,16 @@ _unit.Mapper.Map<ItemViewModel>(x)).ToListAsync();
 
             return await (from x in _unit.RatingRepos.GetAll()
                           select _unit.Mapper.Map<RatingViewModel>(x)).ToListAsync();
+        }
+
+        public UserViewModel getUserById(string id)
+        {
+            return _unit.UserRepos.GetUserById(id);
+        }
+
+        public async Task<List<UserViewModel>> getUsers()
+        {
+            return await _unit.UserRepos.GetUsers().ToListAsync();
         }
     }
 }
